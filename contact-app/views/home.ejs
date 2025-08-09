@@ -1,0 +1,70 @@
+<%- include('./partials/header.ejs') %>
+
+<!-- Main Content -->
+<main class="p-6">
+  <!-- Top Bar -->
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-xl font-semibold text-gray-700">All Contacts</h2>
+    <a href="/add-contact">
+      <button
+        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow"
+      >
+        Add New
+      </button></a
+    >
+  </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto bg-white rounded-lg shadow">
+    <table class="min-w-full text-sm text-left text-gray-700">
+      <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
+        <tr>
+          <th class="px-6 py-3">SL No</th>
+          <th class="px-6 py-3">First Name</th>
+          <th class="px-6 py-3">Last Name</th>
+          <th class="px-6 py-3">Email</th>
+          <th class="px-6 py-3">Phone</th>
+          <th class="px-6 py-3">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% contacts.forEach((contact, index) => { %>
+        <tr class="border-b hover:bg-gray-50">
+          <td class="px-6 py-4"><%= index + 1 %></td>
+          <td class="px-6 py-4"><%= contact.first_name %></td>
+          <td class="px-6 py-4"><%= contact.last_name %></td>
+          <td class="px-6 py-4"><%= contact.email %></td>
+          <td class="px-6 py-4"><%= contact.phone %></td>
+          <td class="px-6 py-4 space-x-2">
+            <a href="/show-contact/<%= contact._id %>">
+              <button
+                class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded"
+              >
+                View
+              </button>
+            </a>
+            <a href="update-contact/<%= contact._id %>">
+              <button
+                class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded"
+              >
+                Edit
+              </button>
+            </a>
+            <a href="/delete-contact/<%= contact._id %>">
+              <button
+                class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+              >
+                Delete
+              </button>
+            </a>
+          </td>
+        </tr>
+        <% }) %>
+
+        <!-- More rows here -->
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<%- include('./partials/footer.ejs') %>
