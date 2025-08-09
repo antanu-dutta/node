@@ -49,15 +49,17 @@
       >Back</a
     >
     <a
-      href="/update-contact"
+      href="/update-contact/<%= user._id %>"
       class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg shadow"
       >Edit</a
     >
-    <button
-      class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow"
-    >
-      Delete
-    </button>
+    <a href="/delete-contact/<%= user._id %>">
+      <button
+        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg shadow"
+      >
+        Delete
+      </button>
+    </a>
   </div>
 </main>
 <%- include('./partials/footer.ejs') %>

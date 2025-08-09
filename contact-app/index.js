@@ -35,15 +35,39 @@ app.get("/show-contact/:id", async (req, res) => {
   const user = await Contact.findOne({ _id });
   res.render("show-contact", { user });
 });
+
 app.get("/add-contact", (req, res) => {
   res.render("add-contact");
 });
-app.post("/add-contact", (req, res) => {});
-app.get("/update-contact", (req, res) => {
-  res.render("update-contact");
+
+app.post("/add-contact", async (req, res) => {
+  let { first_name, last_name, email, phone, address } = req.body;
+  if (phone.startsWith(0)) {
+    phone = phone.substring(1);
+  }
+  const contact = await Contact.create({
+    first_name,
+    last_name,
+    email,
+    phone: `+91 ${phone}`,
+    address: address.replace(" ", ","),
+  });
+
+  res.redirect("/");
 });
-app.post("/update-contact/:id", (req, res) => {});
-app.get("/delete-conttact", (req, res) => {});
+
+app.get("/update-contact/:id", async (req, res) => {
+  const contact = await Contact.findById(req.params.id);
+  res.render("update-contact", { contact });
+});
+app.post("/update-contact/:id", async (req, res) => {
+  await Contact.findByIdAndUpdate(req.params.id, req.body);
+  res.redirect("/");
+});
+app.get("/delete-contact/:id", async (req, res) => {
+  await Contact.findByIdAndDelete(req.params.id);
+  res.redirect("/")
+});
 
 // Start the server
 app.listen(PORT, () => {
