@@ -11,9 +11,11 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "mongoose": "^8.17.1",
+    "mongoose-paginate-v2": "^1.9.1",
     "nodemon": "^3.1.10"
   }
 }
