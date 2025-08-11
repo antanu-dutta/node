@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Form</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Upload Your File</h2>
+      <form action="/submit-form" method="POST" enctype="multipart/form-data">
+        <!-- Name Field -->
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="file1">Choose File 1</label>
+        <input type="file" id="file1" name="file1" />
+
+        <!-- File Upload Field 2 -->
+        <label for="file2">Choose File 2</label>
+        <input type="file" id="file2" name="file2" />
+
+        <!-- File Upload Field 3 -->
+        <label for="file3">Choose File 3</label>
+        <input type="file" id="file3" name="file3" />
+        <!-- File Upload Field -->
+        <!-- <label for="file">Choose File</label>
+        <input type="file" id="file" name="file" /> -->
+        <!-- <label for="multipleFiles">Choose Multiple Files</label>
+        <input type="file" id="multipleFiles" name="files" multiple /> -->
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
