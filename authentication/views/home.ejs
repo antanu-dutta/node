@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App - Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      /* Additional styling for home page */
+      .home-container {
+        text-align: center;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .logout-btn {
+        margin-top: 15px;
+        background: #dc2626;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .logout-btn:hover {
+        background: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home-container">
+      <h2>Welcome, <%= username %> 👋</h2>
+      <p>You are logged in to your ToDo App.</p>
+
+      <form action="/logout" method="GET">
+        <button type="submit" class="logout-btn">Logout</button>
+      </form>
+    </div>
+  </body>
+</html>

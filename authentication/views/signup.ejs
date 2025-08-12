@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App - Sign Up</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <form action="/signup" method="POST">
+      <h2>Create Account</h2>
+
+      <label for="name">Full Name</label>
+      <input
+        type="text"
+        name="full_name"
+        id="name"
+        placeholder="Enter your name"
+        required
+      />
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+      />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        name="confirmPassword"
+        id="confirmPassword"
+        placeholder="Confirm your password"
+        required
+      />
+
+      <button type="submit">Sign Up</button>
+
+      <!-- Login Link -->
+      <p style="text-align: center; margin-top: 10px">
+        Already have an account?
+        <a
+          href="/login"
+          style="color: #4f46e5; text-decoration: none; font-weight: bold"
+        >
+          Login here
+        </a>
+      </p>
+    </form>
+  </body>
+</html>
